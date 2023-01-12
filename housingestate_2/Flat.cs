@@ -39,7 +39,7 @@ namespace HousingEstate
 
         public override string ToString()
         {
-            return "address: " + address + "\n" + "area: " + area + "\n" + "number of rooms: " + rooms + "\n" + "number of inhabitants: " + inhabitants.Count;
+            return "address: " + address + "\n" + "area: " + area +"m2" +  "\n" + "number of rooms: " + rooms + "\n" + "number of inhabitants: " + inhabitants.Count;
         }
     }
 }
