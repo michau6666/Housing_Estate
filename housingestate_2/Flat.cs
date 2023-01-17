@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -35,11 +35,17 @@ namespace HousingEstate
             set { rooms = value; }
         }
 
-        public List<string> inhabitants = new List<string> { };
+        public List<Person> inhabitants = new List<Person> ();
 
         public override string ToString()
         {
             return "address: " + address + "\n" + "area: " + area +"m2" +  "\n" + "number of rooms: " + rooms + "\n" + "number of inhabitants: " + inhabitants.Count;
+        }
+        
+        public void AddInhabitant(Person person)
+        {
+            inhabitants.Add(person);
+            person.XFlat = this;
         }
     }
 }
