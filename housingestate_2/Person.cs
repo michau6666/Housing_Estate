@@ -6,46 +6,26 @@ using System.Threading.Tasks;
 
 namespace HousingEstate
 {
-    class Person
+    class Program
     {
-        private string name;
-        private string surname;
-        private int age;
-        private Flat xFlat;
-        public Flat XFlat
+        static void Main(string[] args)
         {
-            get { return xFlat; }
-            set { this.xFlat = value; }
-        }
+            Person FeroSpara = new Person("Fero", "Spara", 64);
+            Console.WriteLine(FeroSpara.ToString());
+            Person TetaJurcova = new Person("teta", "jurcova", 26);
+            Person RisovaSestra = new Person("risova", "sestra", 40);
+            Person Riso = new Person("riso", "jurco", 17);
 
-        public Person(string name, string surname, int age)
-        {
-            this.name = name;
-            this.surname = surname;
-            this.age = age;
-        }
-        public string Name
-        {
-            get { return name; }
-            set { name = value; }
-        }
+            Flat RisovByt = new Flat(1325, 50, 2);
+            RisovByt.AddInhabitant(TetaJurcova);
+            RisovByt.AddInhabitant(RisovaSestra);
+            RisovByt.AddInhabitant(Riso);
+            Console.WriteLine(RisovByt.ToString());
+            foreach(var inhabitant in RisovByt.inhabitants)
+            {
+                Console.WriteLine(inhabitant.ToString());
+            }
 
-        public string Surname
-        {
-            get { return surname; }
-            set { surname = value; }
         }
-
-        public int Age
-        {
-            get { return age; }
-            set { age = value; }
-        }
-
-        public override string ToString()
-        {
-            return string.Format($"name: { name }\n surname: { surname}\n age: {age}");
-        }
-
     }
 }
