@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +11,13 @@ namespace HousingEstate
         private string name;
         private string surname;
         private int age;
+        private Flat xFlat;
+        public Flat XFlat
+        {
+            get { return xFlat; }
+            set { this.xFlat = value; }
+        }
+
         public Person(string name, string surname, int age)
         {
             this.name = name;
@@ -35,10 +42,10 @@ namespace HousingEstate
             set { age = value; }
         }
 
-
         public override string ToString()
         {
-            return "full name: " + name + " " + surname + ", " + "age: " + age;
+            return string.Format($"name: { name }\n surname: { surname}\n age: {age}");
         }
+
     }
 }
